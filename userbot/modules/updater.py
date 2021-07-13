@@ -53,7 +53,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 '`[HEROKU]: Harap Siapkan Variabel` **HEROKU_APP_NAME** `'
-                ' untuk dapat deploy perubahan terbaru dari ⚡Geez-Project⚡.`'
+                ' untuk dapat deploy perubahan terbaru dari ⛩️Mon-Project⛩️.`'
             )
             repo.__del__()
             return
@@ -63,11 +63,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Geez-Project dyno.`'
+                f'{txt}\n`Kredensial Heroku tidak valid untuk deploy Mon-Project dyno.`'
             )
             return repo.__del__()
         await event.edit('`[HEROKU]:'
-                         '\nSedang MengUpdate ⚡Geez-ProjectBot⚡, Mohon Menunggu 5-7 Menit`'
+                         '\nSedang MengUpdate ⛩️Mon-ProjectBot⛩️, Mohon Menunggu 5-7 Menit`'
                          )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -115,9 +115,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit('**⚡Geez-Project⚡** `Berhasil Di Update!`')
+    await event.edit('**⛩️Mon-Project⛩️** `Berhasil Di Update!`')
     await asyncio.sleep(1)
-    await event.edit('**⚡Geez-Project⚡** `Di Restart....`')
+    await event.edit('**⛩️Mon-Project⛩️** `Di Restart....`')
     await asyncio.sleep(1)
     await event.edit('`Mohon Menunggu Beberapa Detik.`')
     await asyncio.sleep(10)
@@ -126,7 +126,7 @@ async def update(event, repo, ups_rem, ac_br):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID, "#BOT \n"
-            "**⚡Geez-Project⚡ Telah Di Perbarui.**")
+            "**⛩️Mon-Project⛩️ Telah Di Perbarui.**")
         await asyncio.sleep(100)
         await event.delete()
 
@@ -188,13 +188,13 @@ async def upstream(event):
 
     if changelog == '' and force_update is False:
         await event.edit(
-            f'\n⚡Geez-Project⚡ Sudah Versi Terbaru\n')
+            f'\n⛩️Mon-Project⛩️ Sudah Versi Terbaru\n')
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f'**Pembaruan Untuk ⚡Geez-Project⚡ :\n\n💻 Pembaruan Data :**\n`{changelog}`'
+        changelog_str = f'**Pembaruan Untuk ⛩️Mon-Project⛩️ :\n\n💻 Pembaruan Data :**\n`{changelog}`'
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -214,12 +214,12 @@ async def upstream(event):
         await event.edit(
             '`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`')
     else:
-        await event.edit('` Proses Update ⚡Geez-Project, Loading....1%`')
-        await event.edit('` Proses Update ⚡Geez-Project, Loading....20%`')
-        await event.edit('` Proses Update ⚡Geez-Project, Loading....35%`')
-        await event.edit('` Proses Update ⚡Geez-Project, Loading....77%`')
-        await event.edit('` Proses Update ⚡Geez-Project, Updating...90%`')
-        await event.edit('` Proses Update ⚡Geez-Project, Mohon Tunggu Sebentar....100%`')
+        await event.edit('` Proses Update ⚡MON-Project, Loading....1%`')
+        await event.edit('` Proses Update ⚡MON-Project, Loading....20%`')
+        await event.edit('` Proses Update ⚡MON-Project, Loading....35%`')
+        await event.edit('` Proses Update ⚡MON-Project, Loading....77%`')
+        await event.edit('` Proses Update ⚡MON-Project, Updating...90%`')
+        await event.edit('` Proses Update ⚡MON-Project, Mohon Tunggu Sebentar....100%`')
     if conf == "now":
         await update(event, repo, ups_rem, ac_br)
         await asyncio.sleep(10)
