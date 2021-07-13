@@ -1,7 +1,7 @@
 # Thanks Full To Team Ultroid
-# Ported By Vcky @VckyouuBitch
+# Ported By mondar @fam1ly
 # Copyright (c) 2021 Geez - Projects
-# Geez - Projects https://github.com/Vckyou/Geez-UserBot
+# Mon - Projects https://github.com/M0NDAR111/monubot
 # Ini Belum Ke Fix Ya Bg :')
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
@@ -18,7 +18,7 @@ NO_ADMIN = "`Sorry you are not admin :)`"
 
 
 async def get_call(event):
-    geez = await event.client(getchat(event.chat_id))
+    MON = await event.client(getchat(event.chat_id))
     vcky = await event.client(getvc(geez.full_chat.call))
     return vcky.call
 
